@@ -51,21 +51,24 @@ Supply your userID (legacy hardware or legacy example), followed by a colon, fol
 ```
 
 
-`https://deploy.example.com` is the on-prem proxy endpoint that accepts the HTTP POST request. The proxy uses information in the request string (covered below) to route the request to the appropriate WebSphere cell.
+`https://deploy.example.com` is the on-prem proxy endpoint that accepts the HTTP POST request. The proxy uses information in the API parameters *(covered below)* to route the request to the appropriate WebSphere cell.
 
 **The double-quote before the URL is required, and is closed at the end of the URL (below)**
 
-### Specifying the API parameters
+### Specifying the REST-style URI
 
 ```
 job/appDeploy/buildWithParameters?
 ```
 
-Jenkins API URI syntax for performing a build is `/job/JOBNAME/build`
+Jenkins syntax for performing a build via the REST API is `/job/JOBNAME/build?`
 
-`/job/JOBNAME/buildWithParameters` if the job takes parameters
+where JOBNAME is the name of the job as shows in the Jenkins GUI
 
-See [Jenkins Remote Access API Wiki](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) for more information, and examples of using JSON for parameters instead of name/value pairs
+`/job/JOBNAME/buildWithParameters?` if the job takes parameters
+
+
+### Specifying the API parameters
 
 ```
 CM_DIR=cm12345&APP_NAME=MyWebApp&token=wasv855-01utcell"
@@ -80,3 +83,5 @@ The *values* to use are specific to what you are deploying (CM folder, app name,
 `token=`*`cellName`* is required so the request gets routed to the correct WebSphere cell. The cell names to use as token values can be seen in the Jenkins GUI in the description for each JOBNAME.
 
 **The double-quote at the end of the URL is required to enclose the URL.**
+
+See [Jenkins Remote Access API Wiki](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) for more information, and examples of using JSON for parameters instead of name/value pairs
