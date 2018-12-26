@@ -64,7 +64,9 @@ Jenkins API URI syntax for performing a build is `/job/JOBNAME/build`
 
 See [Jenkins Remote Access API Wiki](https://wiki.jenkins.io/display/JENKINS/Remote+access+API) for more information, and examples of using JSON for parameters instead of name/value pairs
 
-`CM_DIR=cm12345&APP_NAME=MyWebApp&token=wasv855-01utcell"`
+```
+CM_DIR=cm12345&APP_NAME=MyWebApp&token=wasv855-01utcell"
+```
 
 These are the name/value parameters required by the JOBNAME
 
