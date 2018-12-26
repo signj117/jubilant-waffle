@@ -80,7 +80,7 @@ The *names* required by a particular JOBNAME can be viewed in the Jenkins GUI by
 
 The *values* to use are specific to what you are deploying (CM folder, app name, cluster name, etc.)
 
-`token=`*`cellName`* is required so the request gets routed to the correct WebSphere cell. The cell names to use as token values can be seen in the Jenkins GUI in the description for each JOBNAME.
+`token=`*`cellName`* is required by Jenkins for using the API, and so the request gets routed to the correct WebSphere cell. The cell names to use as token values can be seen in the Jenkins GUI in the description for each JOBNAME.
 
 **The double-quote at the end of the URL is required to enclose the URL.**
 
