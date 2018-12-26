@@ -13,7 +13,7 @@ The command below deploys WebSphere app 'MyWebApp' in folder cm12345 to the WAS8
 curl -X POST -k -u uid:yourJenkinsAPIToken
 "https://deploy.example.com/
 job/appDeploy/buildWithParameters?
-CM_DIR=cm12345&APP_NAME=MyWebApp&token=01utcell"
+CM_DIR=cm12345&APP_NAME=MyWebApp&token=wasv855-01utcell"
 ```
 *You must enter this command on a single line. It is split onto different lines here for clarity.*
 
@@ -21,7 +21,7 @@ CM_DIR=cm12345&APP_NAME=MyWebApp&token=01utcell"
 
 
 
-### Making a HTTP POST request with authentication
+### Make a HTTP POST request
 
 ```
 curl -X POST -k
@@ -29,8 +29,9 @@ curl -X POST -k
 
 `-X POST` ensures the request is send as an HTTP POST (not a GET).
 
-`-k` connects to the API endpoint without confirming SSL certificate validity. If you want to confirm the validity of the certificate, visit deploy.example.com in a browser and save the certificate from there, then use per your scripting client's SSL documentation.
+`-k` connects to the API endpoint without confirming SSL certificate validity of the endpoint. If you want to confirm the validity of the certificate, visit deploy.example.com in a browser and save the certificate from there, then use per your scripting client's SSL documentation.
 
+### Authenticating the HTTP POST request
 
 Supply your userID (legacy hardware or legacy example), followed by a colon, followed by the [Jenkins API token associated with your userID](https://stackoverflow.com/questions/45466090/how-to-get-the-api-token-for-jenkins):
 
@@ -72,7 +73,7 @@ CM_DIR=cm12345&APP_NAME=MyWebApp&token=wasv855-01utcell"
 
 These are the name/value parameters required by the JOBNAME
 
-The *names* can be viewed in the Jenkins GUI by clicking Build With Parameters within each JOBNAME (appDeploy, exampleappsDeploy, clusterStopStart, etc).
+The *names* required by a particular JOBNAME can be viewed in the Jenkins GUI by clicking "Build With Parameters" within each JOBNAME (appDeploy, exampleappsDeploy, clusterStopStart, etc).
 
 The *values* to use are specific to what you are deploying (CM folder, app name, cluster name, etc.)
 
