@@ -6,7 +6,10 @@ The same Projects for WebSphere (deploy, restart, etc.) available in the Jenkins
 The command below deploys WebSphere app 'MyWebApp' in the cm12345 folder to the WAS855-01UTCell.
 
 ```
-curl -X POST -k -u uid:yourJenkinsAPIToken "https://deploy.example.com/job/appDeploy/buildWithParameters?CM_DIR=cm12345&APP_NAME=MyWebApp&token=01utcell"
+curl -X POST -k -u uid:yourJenkinsAPIToken
+"https://deploy.example.com/
+job/appDeploy/buildWithParameters?
+CM_DIR=cm12345&APP_NAME=MyWebApp&token=01utcell"
 ```
 
 Scroll down the page for a breakdown of each component.
