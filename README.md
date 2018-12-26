@@ -1,11 +1,11 @@
 
-# Jenkins Remote Access API
+# WebSphere Deploy API
 
-The same Projects for WebSphere (deploy, restart, etc.) available in the Jenkins GUI can also be invoked via HTTP Post using a REST-style API.
+The same Projects for WebSphere (deploy, restart, etc.) available in the Jenkins GUI can also be invoked via HTTP POST using a REST-style API.
 
-*These examples use the [cURL](https://curl.haxx.se/docs/manpage.html) command to demonstrate use of the Jenkins API. If not using cURL, check the documentation for your client / language on how to submit HTTP POST requests that require authentication*
+*These examples use the [cURL](https://curl.haxx.se/docs/manpage.html) command to demonstrate use of the WebSphere Deploy API. If not using cURL, check the documentation for your client / language on how to submit HTTP POST requests that require authentication*
 
-## For the impatient
+## API Quick Start
 
 The command below deploys WebSphere app 'MyWebApp' in folder cm12345 to the WAS855-01UTCell:
 
