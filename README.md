@@ -27,9 +27,9 @@ CM_DIR=cm12345&APP_NAME=MyWebApp&token=01utcell"
 curl -X POST -k
 ```
 
-The -X POST option ensures the request is send as an HTTP POST (not a GET).
+`-X POST` ensures the request is send as an HTTP POST (not a GET).
 
-The -k option for curl connects to the API endpoint without confirming SSL certificate validity. If you want to confirm the validity of the certificate, visit deploy.example.com in a browser and save the certificate from there, then use per your scripting client's SSL documentation.
+`-k` connects to the API endpoint without confirming SSL certificate validity. If you want to confirm the validity of the certificate, visit deploy.example.com in a browser and save the certificate from there, then use per your scripting client's SSL documentation.
 
 
 Supply your userID (legacy hardware or legacy example), followed by a colon, followed by the [Jenkins API token associated with your userID](https://stackoverflow.com/questions/45466090/how-to-get-the-api-token-for-jenkins):
