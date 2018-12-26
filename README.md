@@ -1,9 +1,9 @@
 
-## Jenkins Remote Access API
+# Jenkins Remote Access API
 
 The same Projects for WebSphere (deploy, restart, etc.) available in the Jenkins GUI can also be invoked via HTTP Post using a REST-style API.
 
-### For the impatient
+## For the impatient
 
 The command below deploys WebSphere app 'MyWebApp' in folder cm12345 to the WAS855-01UTCell:
 
@@ -15,15 +15,15 @@ CM_DIR=cm12345&APP_NAME=MyWebApp&token=01utcell"
 ```
 *You must enter this command on a single line. It is split onto different lines here for clarity.*
 
-### Detailed API usage
+## Detailed API usage
 
-These examples use the Linux [cURL](https://curl.haxx.se/docs/manpage.html) command to demonstrate use of the Jenkins API:
+*These examples use the [cURL](https://curl.haxx.se/docs/manpage.html) command to demonstrate use of the Jenkins API. If not using cURL, check the documentation for your client / language on how to submit HTTP POST requests that require authentication, similar to what's described here.*
+
+### Making a HTTP POST request with authentication
 
 ```
 curl -X POST -k
 ```
-
-*If not using cURL, check the documentation for your client / language on how to submit HTTP POST requests similar to what's described here.*
 
 The -X POST option ensures the request is send as an HTTP POST (not a GET).
 
@@ -41,6 +41,8 @@ Supply your userID (legacy hardware or legacy example), followed by a colon, fol
 
 *Using REST commands for a Jenkins Project requires the same authentication/authorization as running the Project in the Jenkins GUI.*
 
+### Specifying the endpoint to handle the POST request
+
 ```
 "https://deploy.example.com/
 ```
@@ -50,7 +52,11 @@ Supply your userID (legacy hardware or legacy example), followed by a colon, fol
 
 ** The double-quote before the URL is required, and is closed at the end of the URL *(below)* **
 
-`job/appDeploy/buildWithParameters?`
+### Specifying the API parameters
+
+```
+job/appDeploy/buildWithParameters?
+```
 
 Jenkins API URI syntax for performing a build is `/job/JOBNAME/build`
 
@@ -64,7 +70,7 @@ These are the name/value parameters required by the JOBNAME
 
 The names to use can be viewed in the Jenkins GUI by clicking Build With Parameters within each JOBNAME (appDeploy, exampleappsDeploy, clusterStopStart, etc).
 
-The values to use are self-explanatory (CM folder, app name, cluster name, etc.)
+The values to use are self-explanatory (CM folder, app name, cluster name, etc.) specific to what you are deploying.
 
 `token=`*`cellName`* is required so the request gets routed to the correct WebSphere cell. *The cell names to use as token values can be seen in the Jenkins GUI in the description for each JOBNAME*.
 
