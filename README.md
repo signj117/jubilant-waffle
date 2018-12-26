@@ -50,7 +50,7 @@ Supply your userID (legacy hardware or legacy example), followed by a colon, fol
 
 `https://deploy.example.com` is the on-prem proxy endpoint that accepts the HTTP POST request. The proxy uses information in the request string (covered below) to route the request to the appropriate WebSphere cell.
 
-** The double-quote before the URL is required, and is closed at the end of the URL *(below)* **
+**The double-quote before the URL is required, and is closed at the end of the URL (below)**
 
 ### Specifying the API parameters
 
@@ -68,10 +68,10 @@ See [Jenkins Remote Access API Wiki](https://wiki.jenkins.io/display/JENKINS/Rem
 
 These are the name/value parameters required by the JOBNAME
 
-The names to use can be viewed in the Jenkins GUI by clicking Build With Parameters within each JOBNAME (appDeploy, exampleappsDeploy, clusterStopStart, etc).
+The *names* can be viewed in the Jenkins GUI by clicking Build With Parameters within each JOBNAME (appDeploy, exampleappsDeploy, clusterStopStart, etc).
 
-The values to use are self-explanatory (CM folder, app name, cluster name, etc.) specific to what you are deploying.
+The *values* to use are specific to what you are deploying (CM folder, app name, cluster name, etc.)
 
-`token=`*`cellName`* is required so the request gets routed to the correct WebSphere cell. *The cell names to use as token values can be seen in the Jenkins GUI in the description for each JOBNAME*.
+`token=`*`cellName`* is required so the request gets routed to the correct WebSphere cell. The cell names to use as token values can be seen in the Jenkins GUI in the description for each JOBNAME.
 
-** The double-quote at the end of the URL is required to enclose the URL. **
+**The double-quote at the end of the URL is required to enclose the URL.**
